@@ -471,55 +471,43 @@ struct ContentView: View {
                                 
                                 num = .random(in: 1...38)
                                 money += (now[num-1]*36)
-                                now[num-1] *= 36
+                                now[num-1] *= 35
                                 if num >= 0 && num <= 11{
                                     money += (now[38]*3)
-                                    now[38] *= 3
                                 }
                                 else if num >= 12 && num <= 23{
                                     money += (now[39]*3)
-                                    now[39] *= 3
                                 }
                                 else if num >= 24 && num <= 35{
                                     money += (now[40]*3)
-                                    now[40] *= 3
                                 }
 
                                 if num >= 0 && num <= 17{
                                     money += (now[41]*2)
-                                    now[41] *= 2
                                 }
                                 else if num >= 18 && num <= 35{
                                     money += (now[46]*2)
-                                    now[46] *= 2
                                 }
                                 if (num+1)%2 == 0{
                                     money += (now[42]*2)
-                                    now[42] *= 2
                                 }
                                 else if (num+1)%2 == 1{
                                     money += (now[45]*2)
-                                    now[45] *= 2
                                 }
                                 if arr[num] == 0{
                                     money += (now[43]*2)
-                                    now[43] *= 2
                                 }
                                 else if arr[num] == 1{
                                     money += (now[44]*2)
-                                    now[44] *= 2
                                 }
                                 if (num-1)%3 == 0{
                                     money += (now[47]*3)
-                                    now[47] *= 3
                                 }
                                 else if (num-2)%3 == 0{
                                     money += (now[48]*3)
-                                    now[48] *= 3
                                 }
                                 else if (num)%3 == 0{
                                     money += (now[49]*3)
-                                    now[49] *= 3
                                 }
                                 for ii in 0...50{
                                     renow[ii] = now[ii]
