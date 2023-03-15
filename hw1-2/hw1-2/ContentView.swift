@@ -20,6 +20,7 @@ struct ContentView: View {
     @State var money = 300000
     @State var remoney = 300000
     @State var arr = [0,1,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,2,2]
+    @State private var sp = false
     let player = AVPlayer()
     var body: some View {
         ZStack{
@@ -467,6 +468,7 @@ struct ContentView: View {
                             }
                             
                             Button {
+                                
                                 num = .random(in: 1...38)
                                 money += (now[num-1]*36)
                                 now[num-1] *= 36
@@ -482,7 +484,7 @@ struct ContentView: View {
                                     money += (now[40]*3)
                                     now[40] *= 3
                                 }
-                                
+
                                 if num >= 0 && num <= 17{
                                     money += (now[41]*2)
                                     now[41] *= 2
@@ -525,10 +527,10 @@ struct ContentView: View {
                                     reoccu[ii] = occu[ii]
                                     occu[ii] = 0
                                 }
-            //                    Thread.sleep(forTimeInterval: 2.0)
                                 rebet = bettotal
                                 bettotal = 0
                                 remoney = money
+                                sp.toggle()
                                 
                             } label: {
                                 Image("spin")
@@ -536,19 +538,19 @@ struct ContentView: View {
                                     .frame(width: 80, height: 80)
                             }
                         }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 0))
+                            .fullScreenCover(isPresented: $sp, content: {rou(num: $num,sp:$sp)})
                     }
                 }.padding(EdgeInsets(top: -35, leading: 0, bottom: 0, trailing: 0))
                         
             }
         }
-        
-        
-        .onAppear {
-            let url = Bundle.main.url(forResource: "配樂", withExtension: "mp3")!
-            let playerItem = AVPlayerItem(url: url)
-            player.replaceCurrentItem(with: playerItem)
-            player.play()
-        }
+       
+//        .onAppear {
+//            let url = Bundle.main.url(forResource: "配樂", withExtension: "mp3")!
+//            let playerItem = AVPlayerItem(url: url)
+//            player.replaceCurrentItem(with: playerItem)
+//            player.play()
+//        }
     }
 }
 
