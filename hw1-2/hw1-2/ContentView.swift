@@ -533,12 +533,12 @@ struct ContentView: View {
             }
         }
        
-//        .onAppear {
-//            let url = Bundle.main.url(forResource: "配樂", withExtension: "mp3")!
-//            let playerItem = AVPlayerItem(url: url)
-//            player.replaceCurrentItem(with: playerItem)
-//            player.play()
-//        }
+       .onAppear {
+           let url = Bundle.main.url(forResource: "配樂", withExtension: "mp3")!
+           let playerItem = AVPlayerItem(url: url)
+           player.replaceCurrentItem(with: playerItem)
+           player.play()
+       }
     }
 }
 
