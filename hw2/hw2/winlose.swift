@@ -32,7 +32,7 @@ struct winlose: View {
                 Image("bac")
                     .resizable()
                     .ignoresSafeArea()
-                HStack{
+                VStack{
                     Spacer()
                     VStack{
                         Spacer()

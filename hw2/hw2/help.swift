@@ -21,61 +21,63 @@ struct help: View {
                 .ignoresSafeArea()
                 .scaledToFit()
                 
-            GeometryReader{geometry in
-                VStack{
-                    
-                    Button("RETURN"){
-                        htp.toggle()
-                    }
-                    .foregroundColor(Color.white)
-                    .bold()
-                    .frame(width: geometry.size.width/10,height: geometry.size.height/30)
-                    .padding()
-                    .background(Color.black)
-                    .cornerRadius(40)
-                    .padding(5)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color.black, lineWidth: 2.5)
-                    )
-                    .padding(EdgeInsets(top: 5, leading: geometry.size.width/1.2, bottom: 0, trailing: 0))
-                    HStack{
-                        Button("<"){
-                            if cal == 0{
-                                cal = 4
-                            }
-                            else{
-                                cal -= 1
-                            }
+            HStack{
+                GeometryReader{geometry in
+                    VStack{
+                        
+                        Button("RETURN"){
+                            htp.toggle()
                         }
-                        .frame(width: 30,height: 30)
-                        .padding(1)
+                        .foregroundColor(Color.white)
+                        .bold()
+                        .frame(width: geometry.size.width/10,height: geometry.size.height/30)
+                        .padding()
                         .background(Color.black)
-                        .foregroundColor(Color.white)                      .cornerRadius(40)
-                        Text(txt[cal])
-                            .multilineTextAlignment(.center)
-                            .padding(3)
-                            .frame(width: geometry.size.width/1.3,height: geometry.size.width/7.7)
+                        .cornerRadius(40)
+                        .padding(5)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color.black, lineWidth: 2.5)
+                        )
+                        .padding(EdgeInsets(top: 5, leading: geometry.size.width/1.2, bottom: 0, trailing: 0))
+                        HStack{
+                            Button("<"){
+                                if cal == 0{
+                                    cal = 4
+                                }
+                                else{
+                                    cal -= 1
+                                }
+                            }
+                            .frame(width: 30,height: 30)
+                            .padding(1)
                             .background(Color.black)
-                            .cornerRadius(10)
-                            .foregroundColor(Color.white)
-                        
-                        
-                        Button(">"){
-                            if cal == 4{
-                                cal = 0
+                            .foregroundColor(Color.white)                      .cornerRadius(40)
+                            Text(txt[cal])
+                                .multilineTextAlignment(.center)
+                                .padding(3)
+                                .frame(width: geometry.size.width/1.3,height: geometry.size.width/7.7)
+                                .background(Color.black)
+                                .cornerRadius(10)
+                                .foregroundColor(Color.white)
+                            
+                            
+                            Button(">"){
+                                if cal == 4{
+                                    cal = 0
+                                }
+                                else{
+                                    cal += 1
+                                }
                             }
-                            else{
-                                cal += 1
-                            }
-                        }
-                        .frame(width: 30,height: 30)
-                        .padding(1)
-                        .background(Color.black)
-                        .foregroundColor(Color.white)                      .cornerRadius(40)
-                        
-                        
-                    }.padding(EdgeInsets(top: geometry.size.height/1.72, leading: 0, bottom: 0, trailing: 0))
+                            .frame(width: 30,height: 30)
+                            .padding(1)
+                            .background(Color.black)
+                            .foregroundColor(Color.white)                      .cornerRadius(40)
+                            
+                            
+                        }.padding(EdgeInsets(top: geometry.size.height/1.72, leading: 0, bottom: 0, trailing: 0))
+                    }
                 }
             }
             
